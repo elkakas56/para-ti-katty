@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="amor.png" />
+  <title>Para ti, Katty</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 750px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #ff4d8d;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    strong {
+      color: #ffb3c6;
+    }
+
+    /* Botón personalizado */
+    .music-btn {
+      background: transparent;
+      border: 2px solid #ff4d8d;
+      color: #f1d9f9;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-style: italic;
+      font-family: 'Segoe UI', cursive, sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .music-btn:hover {
+      background: #ff4d8d;
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(255, 77, 141, 0.4);
+    }
+
+    small {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Para ti — No quiero perderte</h1>
+    <h2>Escucha, lee y siente. Esta carta es para ti, desde lo más profundo de mi corazón.</h2>
+    
+    <p>
+      Katty Linda,<br>  
+      Hoy me atrevo a abrir mi corazón sin miedo, porque lo que siento por ti es más fuerte que cualquier error del pasado.  
+      Me equivoqué al traer recuerdos que no valían la pena, y de todo corazón te pido perdón.  
+      Lo último que deseo en esta vida es perderte.
+    </p>
+
+    <p>
+      Tú eres la mujer de mis sueños, la persona por la que mi alma late con fuerza.  
+      No hay nadie más, ni habrá, porque mi vida ya encontró a quien quiere acompañar para siempre: a ti.  
+      No quiero que mis palabras se queden cortas, quiero demostrarte con hechos que lo nuestro es real, profundo y eterno.
+    </p>
+
+    <p>
+      Si alguna vez me dejas, juro que te volvería a buscar, sin importar cuán lejos estuvieras.  
+      Porque amar así solo pasa una vez en la vida, y yo ya te encontré.  
+      No pienso rendirme, no pienso dejarte ir.  
+      Eres mi presente, mi futuro y mi todo.
+    </p>
+
+    <p><strong>Con cada latido, con cada pensamiento, con cada respiro, te amo.</strong></p>
+    <p><em>Chris.</em></p>
+
+    <!-- Reproductor personalizado -->
+    <button id="playBtn" class="music-btn">🎵 Reproducir nuestra canción</button>
+    <audio id="song" loop>
+      <source src="kiss-of-death.mp3" type="audio/mpeg">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <small><code></code></small>
+  </div>
+
+  <script>
+    const song = document.getElementById("song");
+    const playBtn = document.getElementById("playBtn");
+    let isPlaying = false;
+
+    playBtn.addEventListener("click", () => {
+      if (!isPlaying) {
+        song.play();
+        playBtn.textContent = "⏸️ Pausar canción";
+        isPlaying = true;
+      } else {
+        song.pause();
+        playBtn.textContent = "🎵 Reproducir nuestra canción";
+        isPlaying = false;
+      }
+    });
+  </script>
+</body>
+</html>
