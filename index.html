@@ -86,12 +86,10 @@
     <p><em>Chris.</em></p>
 
     <!-- Reproductor personalizado -->
-    <audio id="bg-music" src="Kiss-of-death.mp3" loop></audio> 
+   <audio id="bg-music" src="Kiss-of-death.mp3" loop></audio>
 
-        <button onclick="document.getElementById('bg-music').play(); this.style.display='none';" style="
-            background: transparent;
+  <button id="playBtn" style="
       border: 2px solid #ff4d8d;
-      color: #f1d9f9;
       padding: 12px 22px;
       border-radius: 30px;
       font-size: 16px;
@@ -102,16 +100,34 @@
       margin-top: 20px;
       background: #ff4d8d;
       color: white;
-      transform: scale(1.05);
       box-shadow: 0 4px 15px rgba(255, 77, 141, 0.4);">
-            🎵 Reproducir nuestra canción
-        </button>
+      🎵 Reproducir nuestra canción
+  </button>
 
-    <small><code></code></small>
-  </div>
+  <style>
+    /* Animación para cuando la música suena */
+    .playing {
+      background: #ff1f75 !important;
+      box-shadow: 0 0 20px rgba(255, 77, 141, 0.7);
+      transform: scale(1.1);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1.05); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1.05); }
+    }
+
+    /* Efecto hover */
+    #playBtn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(255, 77, 141, 0.6);
+    }
+  </style>
 
   <script>
-    const song = document.getElementById("song");
+    const song = document.getElementById("bg-music");
     const playBtn = document.getElementById("playBtn");
     let isPlaying = false;
 
@@ -119,10 +135,12 @@
       if (!isPlaying) {
         song.play();
         playBtn.textContent = "⏸️ Pausar canción";
+        playBtn.classList.add("playing");
         isPlaying = true;
       } else {
         song.pause();
         playBtn.textContent = "🎵 Reproducir nuestra canción";
+        playBtn.classList.remove("playing");
         isPlaying = false;
       }
     });
