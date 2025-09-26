@@ -50,6 +50,19 @@
     }
 
     /* Botón personalizado */
+    .music-btn {
+      background: transparent;
+      border: 2px solid #ff4d8d;
+      color: #f1d9f9;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-style: italic;
+      font-family: 'Segoe UI', cursive, sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
 
     .music-btn:hover {
       background: #ff4d8d;
@@ -95,20 +108,7 @@
     <p><em>Chris.</em></p>
 
     <!-- Reproductor personalizado -->
-    <button onclick="document.getElementById('music-btn').play(); this.style.display='none';" style="
-            background: transparent;
-      border: 2px solid #ff4d8d;
-      color: #f1d9f9;
-      padding: 12px 22px;
-      border-radius: 30px;
-      font-size: 16px;
-      font-style: italic;
-      font-family: 'Segoe UI', cursive, sans-serif;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 20px;">
-            🎵 Reproducir nuestra canción
-        </button>
+    <button id="playBtn" class="music-btn">🎵 Reproducir nuestra canción</button>
     <audio id="song" loop>
       <source src="kiss-of-death.mp3" type="audio/mpeg">
       Tu navegador no soporta la reproducción de audio.
